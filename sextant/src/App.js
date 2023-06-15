@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import IPAddress from './IPAddress';
+import PacketLatency from './PacketLatency';
 
 
 function Banner(){
@@ -31,8 +32,8 @@ function App() {
           <IPAddress />
         </Exhibit>
 
-        <Exhibit heading="Latency: ">
-          {/* Latency components here */}
+        <Exhibit heading=" Network Latency: ">
+          <PacketLatency />
         </Exhibit>
 
         {/*Additional Exhibit components here */}
