@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+
 import './App.css';
+
+function Banner(){
+  return(
+    <div className="Banner">
+      <h1>Sextant</h1>
+      </div>
+  );
+}
+
+function Exhibit({heading, children}){
+ return (
+  <div className="Sextant">
+    <h2>{heading}</h2>
+    <div className="GalleryStyle">
+      {children}
+    </div>
+  </div>
+ );
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Banner />
+
+        < Exhibit heading="IP Address: ">
+         {/* Ip Address components here*/}
+        </Exhibit>
+
+        <Exhibit heading="Latency: ">
+          {/* Latency components here */}
+        </Exhibit>
+
+        {/*Additional Exhibit components here */}
     </div>
   );
 }
