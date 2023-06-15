@@ -23,10 +23,11 @@ function Exhibit({heading, children}){
  );
 }
 
-function App() {
+class App extends Component {
+  render() {
   return (
     <div className="App">
-      <Banner />
+        <Banner bannerText='Sextant'/>
 
         < Exhibit heading="IP Address: ">
           <IPAddress />
@@ -39,6 +40,7 @@ function App() {
         {/*Additional Exhibit components here */}
     </div>
   );
+}
 }
 
 export default App;

@@ -1,47 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import WebSocket from 'websocket';
+import React, { Component } from 'react';
+import { w3cwebsocket as W3CWebSocket } from "websocket";
+const client = new W3CWebSocket('ws://localhost:55455');
 
-function PacketLatency() {
-  const [latency, setLatency] = useState(null);
-  let socket = null;
+class PacketLatency extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            latency: null
+        };
+    }
 
-  useEffect(() => {
+    componentDidMount() {
+        client.onmessage = (message) => {
+            this.setState({
+                latency: new Date().getTime() - message.data
+            })
+        };
+    }
 
-    // Function to handle messages received from the WebSocket
-    const handleData = (message) => {
-      const data = JSON.parse(message.utf8Data);
-      const packetTimestamp = data.timestamp;
-      const currentTimestamp = Date.now();
-      const packetLatency = currentTimestamp - packetTimestamp;
-      setLatency(packetLatency);
-    };
-
-    // Open the WebSocket connection when component mounts
-    socket = new WebSocket.client();
-    socket,connect('ws://localhost:55455');
-
-    // Attach the message handler to the WebSocket
-    socket.on('message', handleData);
-
-    // Clean up function to close WebSocket connection when component unmounts
-    return () => {
-      // Close the WebSocket connection here
-      if (socket){
-        socket.close();
-      }      
-    };
-  }, []);
-
-  return (
-    <div>
-      <h3>Packet Latency:</h3>
-      {latency !== null ? (
-        <p>{latency} ms</p>
-      ) : (
-        <p>Loading...</p>
-      )}
-    </div>
-  );
+    render() {
+        return (
+            <span className="PacketLatency">
+                {this.state.latency}
+            </span>
+        );
+    }
 }
 
 export default PacketLatency;
