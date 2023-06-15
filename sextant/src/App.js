@@ -1,5 +1,7 @@
-
+import React, { Component } from 'react';
 import './App.css';
+import IPAddress from './IPAddress';
+
 
 function Banner(){
   return(
@@ -26,7 +28,7 @@ function App() {
       <Banner />
 
         < Exhibit heading="IP Address: ">
-         {/* Ip Address components here*/}
+          <IPAddress />
         </Exhibit>
 
         <Exhibit heading="Latency: ">

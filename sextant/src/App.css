@@ -1,12 +1,6 @@
 .App {
-  text-align: left;
+  font-family: monospace;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 
 .App-header {
   background-color: #282c34;
@@ -16,30 +10,45 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: rgb(201, 203, 207);
+  color: rgb(20, 7, 7);
 }
 
-.App-link {
-  color: #61dafb;
+.Banner {
+  margin: 0.5vw;
+  padding: 0vw 2vw 0vw 2vw;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.75vw;
+  color: #002933;
+  background-color: #005266;
+  border: 0.25vw solid #005266;
+  border-radius: 2vw;
 }
 
 .Exhibit {
-  background-color: black;
-  color: darkcyan;
+  float: left;
+  margin: 0.5vw;
   padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  text-align: center;
+  color: darkblueS;
+  background-color: black;
+  border-radius: 2vw;
 }
 
-.GalleryStyle {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.ExhibitHeading {
+  font-weight: bold;
+  font-size: 1.75vw;
 }
 
-.GalleryStyle > *{
-  width: calc(50% - 5px);
-  margin-bottom: 10px;
-} 
-
+.ExhibitContent {
+  margin: 0.5vw;
+  padding: 1vw 1vw 1vw 1vw;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.75vw;
+  color: #002933;
+  background-color: #334e55;
+  border: 0.25vw solid #334e55;
+  border-radius: 2vw;
+}
 
