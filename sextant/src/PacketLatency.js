@@ -18,6 +18,10 @@ class PacketLatency extends Component {
         };
     }
 
+    formatLatency(latency){
+        return '${latency} ns';
+    }
+
     render() {
         return (
             <span className="PacketLatency">
